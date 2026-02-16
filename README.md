@@ -38,7 +38,7 @@ except requests.exceptions.RequestException as e:
     print(f"Error calling service: {e}")
 ```
 
-## 2. How to Programmatically RECEIVE Data
+### 2. How to Programmatically RECEIVE Data
 
 The microservice responds with a JSON Object. To receive the data, your program must parse this JSON response and extract the `distance` field.
 
@@ -66,6 +66,6 @@ else:
     print("Failed to calculate distance.")
 ```
 
-## 3. UML Sequence Diagram
+### 3. UML Sequence Diagram
 
 ![alt text](uml-sequence.png)
