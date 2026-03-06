@@ -15,7 +15,6 @@ def calculate():
     Returns:
         - JSON object with 'distance' and 'status'
     """
-    # Get arguments from the URL
     current_val = request.args.get('current', type=float)
     goal_val = request.args.get('goal', type=float)
 
@@ -30,11 +29,12 @@ def calculate():
     # We use abs() so it works for goals that are positive or negative
     distance = abs(current_val - goal_val)
 
-    # Return JSON Response
+    print(f"[SERVICE] Calculating distance for Current: {current_val}, Goal: {goal_val}")
+    
     return jsonify({
         "original_current": current_val,
         "original_goal": goal_val,
-        "distance": round(distance, 2), # Round to 2 decimal places
+        "distance": round(distance, 2),
         "status": "success"
     })
 
